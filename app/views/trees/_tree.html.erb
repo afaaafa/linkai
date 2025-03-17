@@ -1,0 +1,23 @@
+<div>
+  <div class="mb-4">
+    <p class="text-sm text-gray-500 mb-1">Instagram</p>
+    <p class="text-gray-800"><%= tree.instagram.present? ? tree.instagram : "Não informado" %></p>
+  </div>
+
+  <div class="mb-4">
+    <p class="text-sm text-gray-500 mb-1">X (Twitter)</p>
+    <p class="text-gray-800"><%= tree.x.present? ? tree.x : "Não informado" %></p>
+  </div>
+</div>
+
+<div>
+  <div class="mb-4">
+    <p class="text-sm text-gray-500 mb-1">YouTube</p>
+    <p class="text-gray-800"><%= tree.youtube.present? ? tree.youtube : "Não informado" %></p>
+  </div>
+
+  <div class="mb-4">
+    <p class="text-sm text-gray-500 mb-1">Estilo</p>
+    <p class="text-gray-800 capitalize"><%= tree.style %></p>
+  </div>
+</div>

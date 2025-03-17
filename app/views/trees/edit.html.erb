@@ -1,0 +1,12 @@
+<% content_for :title, "Editing tree" %>
+<%= render "form", tree: @tree %>
+
+<div>
+  <%= link_to @tree, class: "text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md px-4 py-2 text-sm transition-colors duration-200" do%>
+    Show this tree
+  <% end %>
+
+  <%= link_to trees_path, class: "text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md px-4 py-2 text-sm transition-colors duration-200" do%>
+    Back to trees
+  <% end %>
+</div>

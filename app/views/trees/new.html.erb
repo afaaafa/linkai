@@ -1,0 +1,10 @@
+
+<% content_for :title, "New tree" %>
+
+<%= render "form", tree: @tree %>
+
+<br>
+
+<div>
+  <%= link_to "Back to trees", trees_path, class: "bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200"%>
+</div>
