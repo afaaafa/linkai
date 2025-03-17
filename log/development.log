@@ -25927,3 +25927,175 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 41ms (Views: 24.3ms | ActiveRecord: 4.2ms (5 queries, 1 cached) | GC: 0.0ms)
 
 
+Started GET "/trees/asdf" for ::1 at 2025-03-17 15:05:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LinktreeClone'*/[0m
+Processing by TreesController#show as HTML
+  Parameters: {"id" => "asdf"}
+  [1m[36mTree Load (1.5ms)[0m  [1m[34mSELECT "trees".* FROM "trees" WHERE "trees"."slug" = 'asdf' LIMIT 1 /*action='show',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:72:in 'TreesController#set_tree'
+  Rendering layout layouts/application.html.erb
+  Rendering trees/show.html.erb within layouts/application
+  Rendered trees/show.html.erb within layouts/application (Duration: 9.1ms | GC: 0.7ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 67.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 101.4ms | GC: 1.3ms)
+Completed 200 OK in 251ms (Views: 99.6ms | ActiveRecord: 28.5ms (2 queries, 0 cached) | GC: 4.5ms)
+
+
+Started DELETE "/trees/asdf" for ::1 at 2025-03-17 15:05:06 -0300
+Processing by TreesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "id" => "asdf"}
+  [1m[36mTree Load (1.5ms)[0m  [1m[34mSELECT "trees".* FROM "trees" WHERE "trees"."slug" = 'asdf' LIMIT 1 /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:72:in 'TreesController#set_tree'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:60:in 'TreesController#destroy'
+  [1m[36mTree Destroy (5.2ms)[0m  [1m[31mDELETE FROM "trees" WHERE "trees"."id" = 6 /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:60:in 'TreesController#destroy'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:60:in 'TreesController#destroy'
+Redirected to http://localhost:3000/trees
+Completed 303 See Other in 94ms (ActiveRecord: 10.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/trees" for ::1 at 2025-03-17 15:05:06 -0300
+Processing by TreesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:8:in 'TreesController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering trees/index.html.erb within layouts/application
+  [1m[36mTree Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "trees" WHERE "trees"."user_id" = 2 LIMIT 1 /*action='index',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/views/trees/index.html.erb:18
+  [1m[36mTree Load (1.2ms)[0m  [1m[34mSELECT "trees".* FROM "trees" WHERE "trees"."user_id" = 2 /*action='index',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/views/trees/index.html.erb:20
+  Rendered trees/_tree.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered trees/index.html.erb within layouts/application (Duration: 33.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 35.9ms | ActiveRecord: 3.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/trees/pinot" for ::1 at 2025-03-17 15:05:07 -0300
+Processing by TreesController#show as HTML
+  Parameters: {"id" => "pinot"}
+  [1m[36mTree Load (1.2ms)[0m  [1m[34mSELECT "trees".* FROM "trees" WHERE "trees"."slug" = 'pinot' LIMIT 1 /*action='show',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:72:in 'TreesController#set_tree'
+  Rendering layout layouts/application.html.erb
+  Rendering trees/show.html.erb within layouts/application
+  Rendered trees/show.html.erb within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 15.7ms | ActiveRecord: 2.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/trees/pinot" for ::1 at 2025-03-17 15:05:08 -0300
+Processing by TreesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "id" => "pinot"}
+  [1m[36mTree Load (1.0ms)[0m  [1m[34mSELECT "trees".* FROM "trees" WHERE "trees"."slug" = 'pinot' LIMIT 1 /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:72:in 'TreesController#set_tree'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:60:in 'TreesController#destroy'
+  [1m[36mTree Destroy (3.6ms)[0m  [1m[31mDELETE FROM "trees" WHERE "trees"."id" = 8 /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:60:in 'TreesController#destroy'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT /*action='destroy',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:60:in 'TreesController#destroy'
+Redirected to http://localhost:3000/trees
+Completed 303 See Other in 35ms (ActiveRecord: 8.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/trees" for ::1 at 2025-03-17 15:05:08 -0300
+Processing by TreesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:8:in 'TreesController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering trees/index.html.erb within layouts/application
+  [1m[36mTree Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "trees" WHERE "trees"."user_id" = 2 LIMIT 1 /*action='index',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/views/trees/index.html.erb:18
+  Rendered trees/index.html.erb within layouts/application (Duration: 8.7ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 15.5ms | ActiveRecord: 2.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2025-03-17 15:05:10 -0300
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='LinktreeClone',controller='registrations'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 28.1ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | GC: 0.0ms)
+Completed 200 OK in 65ms (Views: 35.4ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/trees" for ::1 at 2025-03-17 15:05:13 -0300
+Processing by TreesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/controllers/trees_controller.rb:8:in 'TreesController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering trees/index.html.erb within layouts/application
+  [1m[36mTree Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "trees" WHERE "trees"."user_id" = 2 LIMIT 1 /*action='index',application='LinktreeClone',controller='trees'*/[0m
+  ↳ app/views/trees/index.html.erb:18
+  Rendered trees/index.html.erb within layouts/application (Duration: 7.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 20.0ms | ActiveRecord: 2.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/trees/new" for ::1 at 2025-03-17 15:05:15 -0300
+Processing by TreesController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='LinktreeClone',controller='trees'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering trees/new.html.erb within layouts/application
+  Rendered trees/_form.html.erb (Duration: 18.7ms | GC: 0.0ms)
+  Rendered trees/new.html.erb within layouts/application (Duration: 19.5ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 23.8ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2025-03-17 15:06:36 -0300
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='LinktreeClone',controller='registrations'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 16.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 6.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 28.0ms | ActiveRecord: 5.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-17 15:06:36 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='LinktreeClone',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:11
+  [1m[36mTree Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "trees" WHERE "trees"."user_id" = 2 LIMIT 1 /*action='index',application='LinktreeClone',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:11
+  [1m[36mCACHE Tree Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "trees" WHERE "trees"."user_id" = 2 LIMIT 1[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (Duration: 12.9ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 15.1ms | ActiveRecord: 2.0ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/trees/new" for ::1 at 2025-03-17 15:06:37 -0300
+Processing by TreesController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='LinktreeClone',controller='trees'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering trees/new.html.erb within layouts/application
+  Rendered trees/_form.html.erb (Duration: 11.8ms | GC: 0.0ms)
+  Rendered trees/new.html.erb within layouts/application (Duration: 12.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 17.3ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
