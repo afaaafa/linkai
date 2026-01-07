@@ -1,4 +1,4 @@
-# 🌳 Linkaí - A Linktree Clone - Ruby on Rails 8
+# 🌳 Linkaí
 
 ![Ruby on Rails](https://img.shields.io/badge/Ruby_on_Rails-8.0-red?style=for-the-badge&logo=rubyonrails)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-✅-blue?style=for-the-badge&logo=postgresql)
